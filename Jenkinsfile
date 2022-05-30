@@ -2,12 +2,12 @@ pipeline{
 
 agent any
 
-/*environment 
+environment 
 {
 
 
-//DOCKER_TAG = getDockerTag()
-}*/
+DOCKER_TAG = getDockerTag()
+}
 stages {
 
 stage ('Preparation')
@@ -33,7 +33,7 @@ stage('Build ')
   
   steps{
 
-      sh "docker image build .  -t  web/alpineweb:1.0 . "
+      sh "docker image build . -t kubernetes/web: ${DOCKER_TAG}  . "
   }
    
 }
