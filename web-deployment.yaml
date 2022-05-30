@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: natuss/alpineweb:1.0
+        ports:
+        - containerPort: 8081
+        volumeMounts:
+        - name: web-home
+          mountPath: /var/web_home
+      volumes:
+      - name: web-home
+        emptyDir: { }
