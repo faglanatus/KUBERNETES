@@ -5,8 +5,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 8081
-    targetPort: 8081
+  - port: 32223
+    targetPort: 80
   selector:
     app: web
 
