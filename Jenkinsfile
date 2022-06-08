@@ -33,7 +33,7 @@ stage('Build ')
   
   steps{
 
-      sh "docker image build . -t  natuss/kubernetes/web  . "
+      sh "docker image build . -t  natuss/alpine . "
   }
    
 }
